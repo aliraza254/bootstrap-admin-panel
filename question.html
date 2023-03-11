@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GPACC Platform</title>
+    <!--favicon-->
+    <link rel="icon" href="assets/images/logo.png" type="image/png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- Ali RamzanCSS  -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea#editor',
+            skin: 'bootstrap',
+            plugins: 'lists, link, image, media',
+            toolbar: 'bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
+            menubar: false,
+        });
+        tinymce.init({
+            selector: 'textarea#editor',
+            plugins: 'lists, link, image, media',
+            toolbar: 'bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
+            menubar: false,
+            setup: (editor) => {
+                // Apply the focus effect
+                editor.on("init", () => {
+                    editor.getContainer().style.transition = "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
+                });
+                editor.on("focus", () => {
+                    (editor.getContainer().style.boxShadow = "0 0 0 .2rem rgba(0, 123, 255, .25)"),
+                        (editor.getContainer().style.borderColor = "#80bdff");
+                });
+                editor.on("blur", () => {
+                    (editor.getContainer().style.boxShadow = ""),
+                        (editor.getContainer().style.borderColor = "");
+                });
+            },
+        });
+        tinymce.init({
+            selector: 'textarea#editor',
+            skin: 'bootstrap', //The TinyMCE Bootstrap skin
+            plugins: 'lists, link, image, media',
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper pt-4 d-flex ">
+        <div class="sb_responsive_opt justify-content-between ">
+
+            <div class="sidebar-header ml-4 my-4 d-block">
+                <img src="assets/images/logo.png">
+            </div>
+            <button class="sb_hamburger mr-3 " data-status="show">
+                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="21" cy="21" r="21" fill="white" />
+                    <line x1="10.6" y1="13.2" x2="32.1" y2="13.2" stroke="black" stroke-width="3"
+                        stroke-linecap="round" />
+                    <line x1="10.6" y1="20.2" x2="32.1" y2="20.2" stroke="black" stroke-width="3"
+                        stroke-linecap="round" />
+                    <line x1="10.6" y1="27.2" x2="32.1" y2="27.2" stroke="black" stroke-width="3"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+
+        <!--sidebar-wrapper-->
+        <div class="sidebar-wrapper" id="sidebar-wrapper">
+            <div class="sidebar-header my-4 text-center">
+                <img src="assets/images/logo.png">
+            </div>
+            <!--navigation-->
+            <ul class="sb_main_menu">
+                <li class="active">
+                    <a href="index.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2945)">
+                                <path
+                                    d="M11 17V19C11 20.1 10.1 21 9 21H5C3.9 21 3 20.1 3 19V17C3 15.9 3.9 15 5 15H9C10.1 15 11 15.9 11 17Z"
+                                    fill="#121331" />
+                                <path
+                                    d="M11 5V11C11 12.1 10.1 13 9 13H5C3.9 13 3 12.1 3 11V5C3 3.9 3.9 3 5 3H9C10.1 3 11 3.9 11 5Z"
+                                    fill="#121331" />
+                                <path
+                                    d="M21 5V7C21 8.1 20.1 9 19 9H15C13.9 9 13 8.1 13 7V5C13 3.9 13.9 3 15 3H19C20.1 3 21 3.9 21 5Z"
+                                    fill="#121331" />
+                                <path
+                                    d="M21 13V19C21 20.1 20.1 21 19 21H15C13.9 21 13 20.1 13 19V13C13 11.9 13.9 11 15 11H19C20.1 11 21 11.9 21 13Z"
+                                    fill="#121331" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2945">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Dashboard
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/notification.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2960)">
+                                <path
+                                    d="M18.28 4.65C18.14 4.26 17.76 4 17.34 4H6.66C6.24 4 5.86 4.26 5.72 4.65L3 12V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V12L18.28 4.65ZM7.35 6H16.65L18.87 12H16C15.45 12 15 12.45 15 13V15C15 15.55 14.55 16 14 16H10C9.45 16 9 15.55 9 15V13C9 12.45 8.55 12 8 12H5.13L7.35 6Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2960">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Inbox
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2969)">
+                                <path
+                                    d="M18 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V4C20 2.9 19.1 2 18 2ZM7 5.12C7 4.5 7.5 4 8.12 4H10.88C11.5 4 12 4.5 12 5.12V7.88C12 8.5 11.5 9 10.88 9H8.12C7.5 9 7 8.5 7 7.88V5.12ZM11.12 20.01H7.76C7.34 20.01 7.01 19.67 7.01 19.26C7.01 18.84 7.34 18.51 7.76 18.51H11.12C11.54 18.51 11.88 18.84 11.88 19.26C11.88 19.67 11.54 20.01 11.12 20.01ZM16.22 16.5H7.72C7.3 16.5 6.97 16.17 6.97 15.75C6.97 15.34 7.3 15 7.72 15H16.22C16.63 15 16.97 15.34 16.97 15.75C16.97 16.17 16.63 16.5 16.22 16.5ZM16.22 13H7.73C7.32 13 6.98 12.66 6.98 12.25C6.98 11.84 7.32 11.5 7.73 11.5H16.22C16.63 11.5 16.97 11.84 16.97 12.25C16.97 12.66 16.63 13 16.22 13Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2969">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Opportunities
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2741)">
+                                <path
+                                    d="M13 9.75C12.59 9.75 12.25 9.41 12.25 9V2H5.97C4.88 2 4 2.89 4 3.97V20.03C4 21.11 4.88 22 5.97 22H18.03C19.12 22 20 21.11 20 20.03V9.75H13ZM14.62 16.38H13V18C13 18.55 12.55 19 12 19C11.45 19 11 18.55 11 18V16.38H9.38C8.82 16.38 8.38 15.93 8.38 15.38C8.38 14.82 8.82 14.38 9.38 14.38H11V13C11 12.45 11.45 12 12 12C12.55 12 13 12.45 13 13V14.38H14.62C15.18 14.38 15.62 14.82 15.62 15.38C15.62 15.93 15.18 16.38 14.62 16.38Z"
+                                    fill="white" />
+                                <path d="M13.7598 2L19.9998 8.24H13.7598V2Z" fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2741">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Supporting Info
+                    </a>
+                </li>
+                <li class="">
+                    <a href="agents.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2749)">
+                                <path
+                                    d="M11.9999 2H11.7599C6.2399 2.14 1.8699 6.72 1.9999 12.24C2.0599 14.93 3.1799 17.35 4.9599 19.1C5.1899 19.32 5.4299 19.54 5.6799 19.74C5.9299 19.94 6.1799 20.13 6.4499 20.31C6.5799 20.4 6.7199 20.48 6.8499 20.57C7.2599 20.81 7.6899 21.03 8.1399 21.22C8.2699 21.27 8.3999 21.32 8.5299 21.38C8.5499 21.38 8.5699 21.39 8.5899 21.4C8.7199 21.45 8.8599 21.5 8.9999 21.54C9.1399 21.58 9.2799 21.62 9.4199 21.66C9.5699 21.7 9.7199 21.74 9.8699 21.77C9.9199 21.78 9.9699 21.79 10.0199 21.8C10.0899 21.82 10.1699 21.83 10.2399 21.84C10.3799 21.87 10.5299 21.89 10.6799 21.91C11.0999 21.97 11.5399 22 11.9799 22H12.2399C12.5799 21.99 12.9199 21.96 13.2499 21.92C13.5599 21.88 13.8699 21.83 14.1699 21.76C14.1899 21.75 14.1999 21.75 14.2199 21.75C14.6699 21.64 15.1099 21.51 15.5299 21.35C15.6799 21.29 15.8199 21.23 15.9699 21.17C16.0699 21.13 16.1699 21.08 16.2699 21.04C16.6299 20.87 16.9799 20.67 17.3199 20.46C17.4599 20.38 17.5899 20.29 17.7199 20.2C17.8499 20.11 17.9799 20.02 18.0999 19.92C18.4299 19.67 18.7399 19.39 19.0399 19.1C20.9299 17.23 22.0699 14.62 21.9999 11.76C21.8699 6.32 17.4199 2 11.9999 2ZM18.1699 17.08C17.2599 15.82 15.7999 15 14.1499 15H9.8399C8.1999 15 6.7399 15.81 5.8299 17.07C4.7299 15.73 4.0499 14.03 3.9999 12.19C3.8999 7.78 7.3999 4.11 11.8099 4H11.9999C16.3099 4 19.8899 7.5 19.9999 11.81C20.0499 13.81 19.3499 15.65 18.1699 17.08Z"
+                                    fill="white" />
+                                <path
+                                    d="M15 8.52V12.02C15 12.56 14.56 13 14.02 13H11.52C10.13 13 9 11.87 9 10.48V8.52C9 7.13 10.13 6 11.52 6H12.48C13.87 6 15 7.13 15 8.52Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2749">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        GPACC Agents
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2749)">
+                                <path
+                                    d="M11.9999 2H11.7599C6.2399 2.14 1.8699 6.72 1.9999 12.24C2.0599 14.93 3.1799 17.35 4.9599 19.1C5.1899 19.32 5.4299 19.54 5.6799 19.74C5.9299 19.94 6.1799 20.13 6.4499 20.31C6.5799 20.4 6.7199 20.48 6.8499 20.57C7.2599 20.81 7.6899 21.03 8.1399 21.22C8.2699 21.27 8.3999 21.32 8.5299 21.38C8.5499 21.38 8.5699 21.39 8.5899 21.4C8.7199 21.45 8.8599 21.5 8.9999 21.54C9.1399 21.58 9.2799 21.62 9.4199 21.66C9.5699 21.7 9.7199 21.74 9.8699 21.77C9.9199 21.78 9.9699 21.79 10.0199 21.8C10.0899 21.82 10.1699 21.83 10.2399 21.84C10.3799 21.87 10.5299 21.89 10.6799 21.91C11.0999 21.97 11.5399 22 11.9799 22H12.2399C12.5799 21.99 12.9199 21.96 13.2499 21.92C13.5599 21.88 13.8699 21.83 14.1699 21.76C14.1899 21.75 14.1999 21.75 14.2199 21.75C14.6699 21.64 15.1099 21.51 15.5299 21.35C15.6799 21.29 15.8199 21.23 15.9699 21.17C16.0699 21.13 16.1699 21.08 16.2699 21.04C16.6299 20.87 16.9799 20.67 17.3199 20.46C17.4599 20.38 17.5899 20.29 17.7199 20.2C17.8499 20.11 17.9799 20.02 18.0999 19.92C18.4299 19.67 18.7399 19.39 19.0399 19.1C20.9299 17.23 22.0699 14.62 21.9999 11.76C21.8699 6.32 17.4199 2 11.9999 2ZM18.1699 17.08C17.2599 15.82 15.7999 15 14.1499 15H9.8399C8.1999 15 6.7399 15.81 5.8299 17.07C4.7299 15.73 4.0499 14.03 3.9999 12.19C3.8999 7.78 7.3999 4.11 11.8099 4H11.9999C16.3099 4 19.8899 7.5 19.9999 11.81C20.0499 13.81 19.3499 15.65 18.1699 17.08Z"
+                                    fill="white" />
+                                <path
+                                    d="M15 8.52V12.02C15 12.56 14.56 13 14.02 13H11.52C10.13 13 9 11.87 9 10.48V8.52C9 7.13 10.13 6 11.52 6H12.48C13.87 6 15 7.13 15 8.52Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2749">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Sub Agent
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2769)">
+                                <path
+                                    d="M19 5.5V8C19 8.55 18.55 9 18 9H16.5C15.12 9 14 7.88 14 6.5V5.5C14 4.12 15.12 3 16.5 3C17.88 3 19 4.12 19 5.5Z"
+                                    fill="white" />
+                                <path
+                                    d="M10 5.5V8C10 8.55 9.55 9 9 9H7.5C6.12 9 5 7.88 5 6.5V5.5C5 4.12 6.12 3 7.5 3C8.88 3 10 4.12 10 5.5Z"
+                                    fill="white" />
+                                <path
+                                    d="M18 21C18 21.55 17.55 22 17 22H7C6.45 22 6 21.55 6 21C6 18.79 7.79 17 10 17H14C16.21 17 18 18.79 18 21Z"
+                                    fill="white" />
+                                <path
+                                    d="M7 16H3C2.45 16 2 15.55 2 15V14.44C2 12.07 3.87 10 6 10H7C7.55 10 8 10.45 8 11C8 11.55 7.55 12 7 12H6C5.19 12 4.24 12.86 4.04 14H7C7.55 14 8 14.45 8 15C8 15.55 7.55 16 7 16Z"
+                                    fill="white" />
+                                <path
+                                    d="M21 16H17C16.45 16 16 15.55 16 15C16 14.45 16.45 14 17 14H19.96C19.76 12.86 18.8 12 18 12H17C16.45 12 16 11.55 16 11C16 10.45 16.45 10 17 10H18C20.13 10 22 12.07 22 14.44V15C22 15.55 21.55 16 21 16Z"
+                                    fill="white" />
+                                <path
+                                    d="M14.5 11.5V14C14.5 14.55 14.05 15 13.5 15H12C10.62 15 9.5 13.88 9.5 12.5V11.5C9.5 10.12 10.62 9 12 9C13.38 9 14.5 10.12 14.5 11.5Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2769">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Distributors
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2769)">
+                                <path
+                                    d="M19 5.5V8C19 8.55 18.55 9 18 9H16.5C15.12 9 14 7.88 14 6.5V5.5C14 4.12 15.12 3 16.5 3C17.88 3 19 4.12 19 5.5Z"
+                                    fill="white" />
+                                <path
+                                    d="M10 5.5V8C10 8.55 9.55 9 9 9H7.5C6.12 9 5 7.88 5 6.5V5.5C5 4.12 6.12 3 7.5 3C8.88 3 10 4.12 10 5.5Z"
+                                    fill="white" />
+                                <path
+                                    d="M18 21C18 21.55 17.55 22 17 22H7C6.45 22 6 21.55 6 21C6 18.79 7.79 17 10 17H14C16.21 17 18 18.79 18 21Z"
+                                    fill="white" />
+                                <path
+                                    d="M7 16H3C2.45 16 2 15.55 2 15V14.44C2 12.07 3.87 10 6 10H7C7.55 10 8 10.45 8 11C8 11.55 7.55 12 7 12H6C5.19 12 4.24 12.86 4.04 14H7C7.55 14 8 14.45 8 15C8 15.55 7.55 16 7 16Z"
+                                    fill="white" />
+                                <path
+                                    d="M21 16H17C16.45 16 16 15.55 16 15C16 14.45 16.45 14 17 14H19.96C19.76 12.86 18.8 12 18 12H17C16.45 12 16 11.55 16 11C16 10.45 16.45 10 17 10H18C20.13 10 22 12.07 22 14.44V15C22 15.55 21.55 16 21 16Z"
+                                    fill="white" />
+                                <path
+                                    d="M14.5 11.5V14C14.5 14.55 14.05 15 13.5 15H12C10.62 15 9.5 13.88 9.5 12.5V11.5C9.5 10.12 10.62 9 12 9C13.38 9 14.5 10.12 14.5 11.5Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2769">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Subscribers
+                    </a>
+                </li>
+                <li class="">
+                    <a href="faq.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2803)">
+                                <path
+                                    d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM13.23 17.49C13.21 17.57 13.19 17.65 13.15 17.73C13.12 17.8 13.08 17.87 13.04 17.94C12.99 18.01 12.94 18.07 12.88 18.13C12.82 18.19 12.76 18.24 12.69 18.29C12.62 18.33 12.55 18.37 12.48 18.4C12.4 18.43 12.32 18.46 12.24 18.47C12.16 18.49 12.08 18.5 12 18.5C11.67 18.5 11.35 18.36 11.12 18.13C10.88 17.9 10.75 17.58 10.75 17.25C10.75 17.17 10.76 17.08 10.77 17C10.79 16.92 10.81 16.85 10.85 16.77C10.88 16.69 10.92 16.62 10.96 16.55C11.01 16.49 11.06 16.42 11.12 16.36C11.41 16.07 11.84 15.94 12.24 16.02C12.32 16.04 12.4 16.06 12.48 16.09C12.55 16.12 12.62 16.16 12.69 16.21C12.76 16.25 12.82 16.31 12.88 16.36C12.94 16.42 12.99 16.49 13.04 16.55C13.08 16.62 13.12 16.69 13.15 16.77C13.19 16.85 13.21 16.92 13.23 17C13.24 17.08 13.25 17.17 13.25 17.25C13.25 17.33 13.24 17.41 13.23 17.49ZM13.84 12.35C13.31 12.68 13 13.2 13 13.75C13 14.3 12.55 14.75 12 14.75C11.45 14.75 11 14.3 11 13.75C11 12.51 11.66 11.36 12.77 10.66C13.22 10.38 13.66 9.74 13.44 8.88C13.32 8.37 12.9 7.94 12.41 7.8C11.94 7.68 11.48 7.77 11.11 8.05C10.72 8.35 10.5 8.81 10.5 9.32C10.5 9.87 10.05 10.32 9.5 10.32C8.95 10.32 8.5 9.87 8.5 9.32C8.5 8.19 9.01 7.15 9.89 6.47C10.75 5.81 11.85 5.59 12.92 5.87C14.11 6.19 15.08 7.18 15.38 8.39C15.77 9.93 15.15 11.53 13.84 12.35Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2803">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        FAQs
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2811)">
+                                <path
+                                    d="M18 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V4C20 2.9 19.1 2 18 2ZM7 5.12C7 4.5 7.5 4 8.12 4H10.88C11.5 4 12 4.5 12 5.12V7.88C12 8.5 11.5 9 10.88 9H8.12C7.5 9 7 8.5 7 7.88V5.12ZM11.12 20.01H7.76C7.34 20.01 7.01 19.67 7.01 19.26C7.01 18.84 7.34 18.51 7.76 18.51H11.12C11.54 18.51 11.88 18.84 11.88 19.26C11.88 19.67 11.54 20.01 11.12 20.01ZM16.22 16.5H7.72C7.3 16.5 6.97 16.17 6.97 15.75C6.97 15.34 7.3 15 7.72 15H16.22C16.63 15 16.97 15.34 16.97 15.75C16.97 16.17 16.63 16.5 16.22 16.5ZM16.22 13H7.73C7.32 13 6.98 12.66 6.98 12.25C6.98 11.84 7.32 11.5 7.73 11.5H16.22C16.63 11.5 16.97 11.84 16.97 12.25C16.97 12.66 16.63 13 16.22 13Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2811">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Document Centre
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2819)">
+                                <path
+                                    d="M12.0001 20C7.50006 20 3.60006 16.98 2.05006 12.31C1.98006 12.11 1.98006 11.89 2.05006 11.68C3.60006 7.02 7.50006 4 12.0001 4C16.5001 4 20.4001 7.02 21.9501 11.69C22.0201 11.89 22.0201 12.11 21.9501 12.32C20.4001 16.98 16.5001 20 12.0001 20ZM4.06006 12C5.40006 15.66 8.48006 18 12.0001 18C15.5201 18 18.6001 15.66 19.9401 12C18.6001 8.34 15.5201 6 12.0001 6C8.48006 6 5.39006 8.34 4.06006 12Z"
+                                    fill="white" />
+                                <path
+                                    d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2819">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Insights
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2829)">
+                                <path
+                                    d="M20 9.03V19.97C20 20.54 19.54 21 18.97 21H17.03C16.46 21 16 20.54 16 19.97V9.03C16 8.46 16.46 8 17.03 8H18.97C19.54 8 20 8.46 20 9.03Z"
+                                    fill="white" />
+                                <path
+                                    d="M14 5.17V19.83C14 20.47 13.47 21 12.83 21H11.17C10.53 21 10 20.47 10 19.83V5.17C10 4.53 10.53 4 11.17 4H12.83C13.47 4 14 4.53 14 5.17Z"
+                                    fill="white" />
+                                <path
+                                    d="M8 12.85V20.15C8 20.62 7.62 21 7.15 21H4.85C4.38 21 4 20.62 4 20.15V12.85C4 12.38 4.38 12 4.85 12H7.15C7.62 12 8 12.38 8 12.85Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2829">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Analytics
+                    </a>
+                </li>
+                <li class="">
+                    <a href="question.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_65_2842)">
+                                <path
+                                    d="M18.99 11.35C19 11.27 19 11.19 19 11.11V9.89C19 6.64 16.36 4 13.11 4H7.89C4.64 4 2 6.64 2 9.89V16C2 16.55 2.45 17 3 17H8.07C8.44 19.27 10.41 21 12.78 21H21C21.55 21 22 20.55 22 20V15.78C22 13.77 20.75 12.04 18.99 11.35ZM7.73 10.74C7.71 10.82 7.69 10.9 7.65 10.98C7.62 11.05 7.58 11.13 7.54 11.19C7.49 11.26 7.44 11.33 7.38 11.38C7.33 11.44 7.26 11.49 7.19 11.54C7.12 11.58 7.05 11.62 6.98 11.65C6.9 11.69 6.82 11.71 6.74 11.73C6.66 11.74 6.58 11.75 6.5 11.75C6.42 11.75 6.34 11.74 6.26 11.73C6.18 11.71 6.1 11.69 6.02 11.65C5.95 11.62 5.87 11.58 5.81 11.54C5.74 11.49 5.67 11.44 5.62 11.38C5.56 11.33 5.51 11.26 5.46 11.19C5.42 11.13 5.38 11.05 5.35 10.98C5.31 10.9 5.29 10.82 5.27 10.74C5.26 10.66 5.25 10.58 5.25 10.5C5.25 10.17 5.38 9.85 5.62 9.62C6.07 9.15 6.92 9.15 7.38 9.62C7.44 9.67 7.49 9.74 7.54 9.81C7.58 9.87 7.62 9.95 7.65 10.02C7.69 10.1 7.71 10.18 7.73 10.26C7.74 10.34 7.75 10.42 7.75 10.5C7.75 10.58 7.74 10.66 7.73 10.74ZM13.62 9.62C14.08 9.15 14.93 9.15 15.38 9.62C15.62 9.85 15.75 10.17 15.75 10.5C15.75 10.58 15.74 10.66 15.73 10.74C15.71 10.82 15.69 10.9 15.65 10.98C15.65 10.99 15.64 10.99 15.64 11C15.61 11.06 15.58 11.14 15.54 11.19C15.49 11.26 15.44 11.33 15.38 11.38C15.15 11.62 14.83 11.75 14.5 11.75C14.17 11.75 13.85 11.62 13.62 11.38C13.56 11.33 13.51 11.26 13.46 11.19C13.42 11.14 13.39 11.06 13.36 11C13.36 10.99 13.35 10.99 13.35 10.98C13.31 10.9 13.29 10.82 13.27 10.74C13.26 10.66 13.25 10.58 13.25 10.5C13.25 10.17 13.38 9.85 13.62 9.62ZM9.62 9.62C10.08 9.15 10.92 9.15 11.38 9.62C11.62 9.85 11.75 10.17 11.75 10.5C11.75 10.58 11.74 10.66 11.73 10.74C11.71 10.82 11.69 10.9 11.65 10.98C11.62 11.04 11.59 11.11 11.55 11.17C11.55 11.18 11.54 11.18 11.54 11.19C11.49 11.26 11.44 11.33 11.38 11.38C11.15 11.62 10.83 11.75 10.5 11.75C10.42 11.75 10.34 11.74 10.26 11.73C10.18 11.71 10.1 11.69 10.02 11.65C9.95 11.62 9.87 11.58 9.81 11.54C9.74 11.49 9.67 11.44 9.62 11.38C9.56 11.33 9.51 11.26 9.46 11.19C9.42 11.13 9.38 11.05 9.35 10.98C9.31 10.9 9.29 10.82 9.27 10.74C9.26 10.66 9.25 10.58 9.25 10.5C9.25 10.17 9.38 9.85 9.62 9.62ZM20 19H12.78C11.52 19 10.45 18.16 10.11 17H13.11C15.57 17 17.67 15.49 18.56 13.35C19.42 13.82 20 14.74 20 15.78V19Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_65_2842">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        Ask a Question
+                    </a>
+                </li>
+            </ul>
+            <!--end navigation-->
+        </div>
+        <div class="wrapper-main-left bg-fafafa px-5 py-4">
+            <div class="sb_topbar row mx-0 py-3 px-3 rounded">
+                <div class="col-lg-3 col-md-4  d-flex align-items-center sb_page_title_main">
+                    <p class="sb_page_title m-0">GPACC Platform</p>
+                </div>
+                <div class="col-lg-9 col-md-12 px-0 sb_topbar_second">
+                    <div class="row m-0 p-0">
+                        <div
+                            class="col-lg-4 col-md-6 col-sm-4  col-xs-12 d-flex align-items-center sb_page_title_small">
+                            <p class="sb_page_title m-0">GPACC Platform</p>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 p-0 d-flex">
+                            <div class="sb_profile_img position-relative">
+                                <img src="assets/images/person.png" width="49px" height="49px">
+                                <span class="sb_online position-absolute"></span>
+                            </div>
+                            <div class="sb_user_details px-2">
+                                <p class="sb_username m-0">Anthony Dalpiaz</p>
+                                <p class="sb_userrole m-0">GPACC Super Admin</p>
+                            </div>
+                            <div
+                                class="sb_noti_bell position-relative d-flex align-items-center justify-content-center">
+                                <img src="assets/images/bell.svg">
+                                <span
+                                    class="sb_count position-absolute d-flex align-items-center justify-content-center">3</span>
+                            </div>
+                        </div>
+                        <div
+                            class="col-lg-6 col-md-12 col-sm-12  col-xs-12 d-flex justify-content-end pr-0 sb_topbar_button">
+                            <button class="sb_setting text-white mr-2">
+                                <img src="assets/images/setting.svg" class="mr-1" width="24px" height="24px" />
+                                <span>Settings</span>
+                            </button>
+                            <button class="sb_logout text-white">
+                                <img src="assets/images/logout.svg" class="mr-1" width="24px" height="24px" />
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mt-5">
+                <div>
+                    <h1 class="d-flex align-items-center font-weight-bold sb_agent_heading ">Ask a Question</h1>
+                </div>
+                <div class="d-flex align-items-center d-xl-none d-sm-flex">
+                    <div class="sb_ask_question_responsive sb_opportunities_top_btn">
+                        <a href="#" class="sb_agent_top_button">New</a>
+                    </div>
+                    <div class="sb_ask_question_responsive sb_opportunities_top_btn">
+                        <a href="#" class="sb_agent_top_button">Seen</a>
+                    </div>
+                    <div class="sb_ask_question_responsive sb_opportunities_top_btn">
+                        <a href="#" class="sb_agent_top_button">NDAs Signed</a>
+                    </div>
+                </div>
+            </div>
+            <div class="py-4 bg-white border-top-17">
+                <form>
+                    <div class="form-group row mx-0">
+                        <label for="inputText" class="col-sm-2 col-form-label">Question Title</label>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" id="inputText" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mx-0">
+                        <label for="inputEmail13" class="col-sm-2 col-form-label">To</label>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" id="inputEmail13">
+                        </div>
+
+                        <div class="form-group row check mx-0">
+                            <div class="col-sm-16 users sb_question">Ask your question</div>
+
+                        </div>
+                    </div>
+                    <div class="container mt-4 mb-4">
+
+                        <div class="row justify-content-md-center mx-0">
+                            <div class="col-md-12 col-lg-12 p-0 text-right">
+                                <div class="form-group sb_text_editor">
+                                    <textarea id="editor"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary sb_button">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <footer>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+            integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+            crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>    
+        <script>
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    var scroll = $(window).scrollTop();
+
+                    //>=, not <=
+                    if (scroll >= 50) {
+                        //clearHeader, not clearheader - caps H
+                        $("body").addClass("sb_scroll");
+                    }
+                    else {
+                        $("body").removeClass("sb_scroll");
+                    }
+                }); //missing );
+                $('.sb_hamburger').click(function () {
+                    if ($(this).attr('data-status') == 'show') {
+                        // $('.sb_bars_middle').hide();
+                        $("#sidebar-wrapper").show();
+                        $('body').addClass('overflow-none');
+                        $("#sidebar-wrapper").animate({ left: '300px' }, 1000);
+                        $(this).attr('data-status', 'hide');
+                    }
+                    else if ($(this).attr('data-status') == 'hide') {
+                        // $('.sb_bars_middle').show();
+                        $("#sidebar-wrapper").animate({ left: '-100%' }, 2000);
+                        // $("#sidebar-wrapper").hide();
+                        $(this).attr('data-status', 'show');
+                        $('body').removeClass('overflow-none');
+                    }
+                })
+            })
+        </script>
+    </footer>
+</body>
+
+</html>
